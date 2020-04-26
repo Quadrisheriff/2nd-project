@@ -1,0 +1,137 @@
+openapi: 3.0.0
+info:
+  title: media
+  version: '1.0'
+  description: 'Media resource allows you to get, create and delete media files.'
+  contact:
+    url: listmonk.app
+    name: listmonk
+  license:
+    name: AGP lv3
+servers:
+  - url: 'http://localhost:9000'
+paths:
+  '/api/media/{media_id}':
+    get:
+      summary: /api/media
+      tags:
+        - Media endpoint
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type:
+                      - string
+                      - object
+                    properties:
+                      id:
+                        type: number
+                        description: |
+                          media id value
+                      uuid:
+                        type: string
+                        description: |
+                          media uuid value
+                        format: uuid
+                      filename:
+                        type: string
+                        description: name of media file
+                      width:
+                        description: width of media file
+                        type: number
+                      height:
+                        type: number
+                        description: height of media file
+                      created_at:
+                        type: string
+                        description: date and time when media file was created
+                      thumb_url:
+                        type: string
+                        description: media file thumb url
+                        format: uri
+                      url:
+                        type: string
+                        description: media file url
+                        format: uri
+            application/xml:
+              schema:
+                type: object
+                properties: {}
+      operationId: get-api-media
+      description: Gets a uploaded media file
+      parameters: []
+    post:
+      summary: ''
+      operationId: post-api-media
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: boolean
+      description: Uploads a media file
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type:
+                - string
+                - object
+          multipart/form-data:
+            schema:
+              type: object
+        description: the media file to be uploaded
+      parameters: []
+      tags:
+        - Media endpoint
+    delete:
+      summary: ''
+      operationId: delete-api-media
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type:
+                      - string
+                      - boolean
+      description: Delete a endpoint
+      parameters: []
+      tags:
+        - Media endpoint
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                '':
+                  type: string
+            examples: {}
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+        description: ''
+    parameters:
+      - schema:
+          type: number
+        name: media_id
+        in: path
+        description: the id value of the media file to be deleted
+        required: true
+components:
+  schemas: {}
