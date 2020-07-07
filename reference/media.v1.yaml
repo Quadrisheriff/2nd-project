@@ -7,7 +7,8 @@ info:
     url: listmonk.app
     name: listmonk
   license:
-    name: AGP lv3
+    name: AGPL v3 license
+    url: 'https://www.gnu.org/licenses/agpl-3.0.en.html'
 servers:
   - url: 'http://localhost:9000'
 paths:
