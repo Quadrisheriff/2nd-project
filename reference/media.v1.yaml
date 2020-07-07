@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: media
   version: '1.0'
-  description: 'Media resource allows you to get, create and delete media files.'
+  description: 'The Media resource allows you to Get, Upload and Delete media files.'
   contact:
     url: listmonk.app
     name: listmonk
@@ -66,7 +66,7 @@ paths:
       description: Gets a uploaded media file
       parameters: []
     post:
-      summary: ''
+      summary: '/api/media/{media_id}'
       operationId: post-api-media
       responses:
         '200':
@@ -94,7 +94,7 @@ paths:
       tags:
         - Media endpoint
     delete:
-      summary: ''
+      summary: '/api/media/{media_id}'
       operationId: delete-api-media
       responses:
         '200':
@@ -125,7 +125,7 @@ paths:
             schema:
               type: object
               properties: {}
-        description: ''
+        description: Deletes a media file.
     parameters:
       - schema:
           type: number
