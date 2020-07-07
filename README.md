@@ -3,4 +3,4 @@ Created Open API spec for Listmonk's Media resource with Stoplight.
 
 The specsheet is hosted at
 
-https://stoplight.io/p/docs/gh/Quadrisheriff/Stoplight-Project
+https://stoplight.io/p/docs/gh/quadrisheriff/stoplight-project
